@@ -94,7 +94,7 @@ sock.bind((MI_IP, PORT))
 def recibir():
     while True:
         data, addr = sock.recvfrom(BUFFER_SIZE)
-        print(f"\n📨 De {addr[0]}: {data.decode()}\n> ", end="")
+        print(f"\nDe {addr[0]}: {data.decode()}\n> ", end="")
 
 threading.Thread(target=recibir, daemon=True).start()
 print(f"Chat BATMAN activo en {MI_IP}. Enviando a: {', '.join(DESTINOS)}")
